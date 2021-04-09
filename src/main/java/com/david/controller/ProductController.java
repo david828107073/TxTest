@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,10 +30,11 @@ public class ProductController {
 	}
 
 	@GetMapping("/tx")
-	public String testTransaction() {
+	public String testTransaction(@ModelAttribute Product product) {
+		System.out.println(product);
 //		productService.save(new Product());
 //		productService.save2();
-		productService.transationTest();
+//		productService.transationTest();
 		return "Transational Test";
 	}
 }

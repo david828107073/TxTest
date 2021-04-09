@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>新增</title>
+<style>
+h1 {
+	text-align: center;
+}
+
+h1, form {
+	width: 500px;
+	margin: 0 auto;
+}
+
+form {
+	border: 1px solid #000;
+	padding: 5px;
+}
+
+form div {
+	margin-top: 5px;
+}
+
+form div label {
+	margin-right: 5px;
+}
+
+form .btn {
+	text-align: center;
+}
+
+form input[type="submit"] {
+	background-color: lightblue;
+	border: none;
+	color: #fff;
+	border-radius: 5px;
+	padding: 3px 8px;
+}
+</style>
+</head>
+<body>
+	<h1>新增商品</h1>
+	<form th:action="@{/product/tx}" method="get">
+		<div>
+			<label>品牌:</label><input name="name" maxlength="10" />
+		</div>
+		<div>
+			<label>品名:</label><input name="brand" maxlength="10" />
+		</div>
+		<div>
+			<label>價格:</label><input name="price" maxlength="5" type="number" />
+		</div>
+		<div>
+			<label>庫存:</label><input name="store" maxlength="5" type="number" />
+		</div>
+		<div class="btn">
+			<input type="submit" value="送出" />
+		</div>
+	</form>
+</body>
+</html>
