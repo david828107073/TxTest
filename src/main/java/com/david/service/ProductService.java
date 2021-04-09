@@ -20,16 +20,19 @@ public class ProductService {
 	@Autowired
 	private UserRepository userRepository;
 
+	@Autowired
+	private UserService userService;
+
 	public List<Product> findAll() {
 		return productRepository.findAll();
 	}
 
-//	@Transactional
+	@Transactional
 	public void transationTest() {
 		try {
 			Product p = new Product();
 			save(p);
-			save2();
+			userService.save();
 		} catch (Exception e) {
 			System.out.println("Test");
 		}
