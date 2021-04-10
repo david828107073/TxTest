@@ -34,7 +34,7 @@ public class ProductController {
 		System.out.println(product);
 //		productService.save(new Product());
 //		productService.save2();
-//		productService.transationTest();
+//		productService.transationTest();s
 		return "Transational Test";
 	}
 }
